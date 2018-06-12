@@ -1,6 +1,6 @@
 <?php
 namespace Avalara;
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 
 /**
  * Base AvaTaxClient object that handles connectivity to the AvaTax v2 API server.
