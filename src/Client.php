@@ -175,7 +175,13 @@ class AvaTaxClientBase
 
         // Contact the server
         try {
-            $response = $this->client->request($verb, $apiUrl, $guzzleParams);
+
+            if ($verb == "get") {
+                $response = $this->client->get($apiUrl, $guzzleParams);
+            } else {
+                $response = $this->client->post($apiUrl, $guzzleParams);
+            }
+            
             $body = $response->getBody();
             return json_decode($body);
         } catch (\Exception $e) {
