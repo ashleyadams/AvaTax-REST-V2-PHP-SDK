@@ -80,7 +80,7 @@ class AvaTaxClientBase
         }
 
         // Prevent overriding the base_uri 
-        $guzzleParams['base_uri'] = $env;
+        $guzzleParams['base_url'] = $env;
       
         // Configure the HTTP client
         $this->client = new Client($guzzleParams);
@@ -176,7 +176,7 @@ class AvaTaxClientBase
         // Contact the server
         try {
 
-            if ($verb == "get") {
+            if ($verb == "GET") {
                 $response = $this->client->get($apiUrl, $guzzleParams);
             } else {
                 $response = $this->client->post($apiUrl, $guzzleParams);
